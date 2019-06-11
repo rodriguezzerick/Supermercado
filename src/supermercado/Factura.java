@@ -31,6 +31,7 @@ public class Factura extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Factura");
         MostrarTabla();
+        dateMostrar.setText(FechaActual());
     }
     
     public static String Vendedor (){
@@ -42,7 +43,7 @@ public class Factura extends javax.swing.JFrame {
     
     public static String FechaActual (){
         Date fecha = new Date ();
-        SimpleDateFormat formatofecha = new SimpleDateFormat("DD/MM/YYY");
+        SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYY");
         return formatofecha.format(fecha);
     }
     
@@ -53,6 +54,7 @@ public class Factura extends javax.swing.JFrame {
         modelo.addColumn("Nombre");
         modelo.addColumn("Cantidad");
         modelo.addColumn("Precio");
+        modelo.addColumn("Vencimiento");
         tblMostrar.setModel(modelo);
         
         String sql = "SELECT * FROM inventario";
