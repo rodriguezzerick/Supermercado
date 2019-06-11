@@ -16,6 +16,9 @@ public class Compra extends javax.swing.JFrame {
      */
     public Compra() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Compra");
     }
 
     /**

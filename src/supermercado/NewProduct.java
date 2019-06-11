@@ -25,6 +25,13 @@ public class NewProduct extends javax.swing.JFrame {
      */
     public NewProduct() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Nuevo Producto");
+        btnLimpiar.setVisible(false);
+                
+                
+                
         
     }
 
@@ -47,6 +54,7 @@ public class NewProduct extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         txtVencimiento = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,25 +75,37 @@ public class NewProduct extends javax.swing.JFrame {
 
         jButton2.setText("Cancelar");
 
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAgregar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE))
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(txtNombre)
-                    .addComponent(txtCantidad)
-                    .addComponent(txtPrecio)
-                    .addComponent(txtVencimiento))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAgregar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(txtNombre)
+                            .addComponent(txtCantidad)
+                            .addComponent(txtPrecio)
+                            .addComponent(txtVencimiento)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(btnLimpiar)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -111,7 +131,9 @@ public class NewProduct extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregar)
                     .addComponent(jButton2))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLimpiar)
+                .addContainerGap())
         );
 
         pack();
@@ -131,9 +153,26 @@ public class NewProduct extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(NewProduct.class.getName()).log(Level.SEVERE, null, ex);
         }
-         
+        btnLimpiar.setVisible(true);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    
+    void Limpiar (){
+        txtNombre.setText("");
+        txtCantidad.setText("");
+        txtPrecio.setText("");
+        txtVencimiento.setText("");
+    }
+    
+    
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        Limpiar();
+        btnLimpiar.setVisible(false);
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -171,6 +210,7 @@ public class NewProduct extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -50,6 +50,11 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         btnVenta.setText("Venta");
+        btnVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentaActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -113,6 +118,13 @@ public class Inicio extends javax.swing.JFrame {
         admin.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnAdministrarActionPerformed
+
+    private void btnVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentaActionPerformed
+        // TODO add your handling code here:
+        Factura nueva = new Factura();
+        nueva.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVentaActionPerformed
 
     /**
      * @param args the command line arguments
